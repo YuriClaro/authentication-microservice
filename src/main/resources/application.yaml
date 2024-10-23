@@ -1,0 +1,34 @@
+info:
+  app:
+    name: My Authentication Microservice
+    description: A simple authentication microservice
+    version: 1.0.0
+  contact:
+    name: Yuri Claro
+    email: yuriclaro@outlook.com
+spring:
+  application:
+    name: authentication_microservice
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springboot2
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    enabled: true
+  springdoc:
+    swagger-ui:
+      path: /swagger-ui.html
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: health, info
+  server:
+    port: 8081
